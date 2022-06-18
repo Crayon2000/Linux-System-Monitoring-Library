@@ -31,7 +31,7 @@ int64_t linuxUtil::getTemperature(const std::string &thermalZone) {
     int64_t temperature;
     std::string line;
     while (std::getline(temperatureFile, line)) {
-        sscanf(line.c_str(), "%lld", &temperature);
+        sscanf(line.c_str(), "%" PRId64, &temperature);
     }
     temperatureFile.close();
     return temperature;
